@@ -5,7 +5,6 @@
 <title>Yamini's Secret 😏</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-
   body {
     font-family: 'Comic Neue', cursive;
     display: flex;
@@ -17,7 +16,6 @@
     overflow: hidden;
     flex-direction: column;
   }
-
   h1 {
     font-size: 2.5rem;
     color: #fff;
@@ -25,7 +23,6 @@
     margin-bottom: 50px;
     text-align: center;
   }
-
   #yesBtn {
     font-size: 2rem;
     padding: 20px 40px;
@@ -38,12 +35,8 @@
     box-shadow: 3px 3px 15px rgba(0,0,0,0.3);
     transition: transform 0.2s, background 0.3s;
   }
+  #yesBtn:hover { transform: scale(1.2); }
 
-  #yesBtn:hover {
-    transform: scale(1.2);
-  }
-
-  /* Confetti */
   .confetti {
     position: absolute;
     width: 10px;
@@ -53,30 +46,24 @@
     pointer-events: none;
     animation: fall 3s linear infinite;
   }
-
   @keyframes fall {
     0% { transform: translateY(0) rotate(0deg); }
     100% { transform: translateY(100vh) rotate(360deg); }
   }
-
 </style>
 </head>
 <body>
-
 <h1>Yamini, want to know a secret? 🤫</h1>
 <button id="yesBtn">YES</button>
-
 <script>
 const yesBtn = document.getElementById("yesBtn");
 
-// Function to move YES button randomly
 function moveButton() {
   const x = Math.random() * (window.innerWidth - yesBtn.offsetWidth);
   const y = Math.random() * (window.innerHeight - yesBtn.offsetHeight);
   yesBtn.style.left = x + "px";
   yesBtn.style.top = y + "px";
 
-  // Add some confetti each move
   for(let i=0; i<5; i++){
     const confetti = document.createElement('div');
     confetti.classList.add('confetti');
@@ -87,9 +74,7 @@ function moveButton() {
   }
 }
 
-// Move YES button on hover
 yesBtn.addEventListener("mouseover", moveButton);
 </script>
-
 </body>
 </html>
